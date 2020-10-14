@@ -10,13 +10,14 @@ class App extends React.Component{
     state={videos:[],selectedVideo:null};
 
     componentDidMount(){
-        this.onTermSubmit('children stories');
+        this.onTermSubmit('javascript');
     }
     onTermSubmit=async(term)=>{
         const response=await youtube.get('/search',{
             params:{
                 q:term,
                 part:'snippet',
+                type:"video",
                 key:'AIzaSyBFr4ktwpJY002onP9We0VT3xioSud-RTE'
             }
         });
